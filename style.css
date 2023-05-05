@@ -17,7 +17,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
     padding: 0 10%;
     box-sizing: border-box;
     background-color: #fff;
@@ -42,7 +42,7 @@ nav .logo {
 .menu-center {
     display: flex;
     justify-content: center;
-} 
+}
 
 .menu-center a {
     color: #373F41;
@@ -63,13 +63,13 @@ nav .logo {
     color: #fff;
     padding: 10px 20px;
     font-family: 'Mulish', sans-serif;
-    margin-left: auto; 
-    font-size: 16px; 
+    margin-left: auto;
+    font-size: 16px;
     padding: 10px 20px;
     border-radius: 1px;
     text-decoration: none;
 }
- 
+
 
 /* HERO */
 .hero {
@@ -77,6 +77,7 @@ nav .logo {
     justify-content: center;
     align-items: center;
     margin: 80px 0;
+    flex-wrap: wrap;
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -167,11 +168,80 @@ footer {
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Mulish';
-    src: url('path/to/Mulish-SemiBold.woff2') format('woff2'),
-        url('path/to/Mulish-SemiBold.woff') format('woff'),
-        url('path/to/Mulish-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+#hamburger {
+    color: #3C64B1;
+}
+
+.nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.7s;
+    overflow-y: show;
+}
+
+.nav a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    word-wrap: break-word;
+    display: block;
+    padding: 20px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #3C64B1;
+
+}
+
+.nav a:hover {
+    color: #fff;
+    transition: 0.4s;
+    text-decoration: none;
+    background-color: #3C64B1;
+}
+
+.nav .close {
+    position: absolute;
+    top: 0;
+    right: 22px;
+    margin-left: 50px;
+    font-size: 30px
+}
+
+.slide {
+    display: none;
+    top: 0;
+    position: fixed;
+    padding: 20px;
+    width: 100%;
+}
+
+.slide a {
+    color: #fff;
+    font-size: 20px;
+}
+#logIn{
+    font-family: 'Mulish', sans-serif;
+    color: #fff;
+    background-color: #3C64B1;
+}
+@media screen and (max-width: 1000px) {
+    .slide {
+        display: flex;
+    }
+    
+    .menu-center {
+        display: none;
+    }
+
+    .menu-right {
+        display: none;
+    }
 }
