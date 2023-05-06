@@ -150,23 +150,6 @@ footer {
     text-align: center;
 }
 
-@font-face {
-    font-family: 'Mulish';
-    src: url('path/to/Mulish-Light.woff2') format('woff2'),
-        url('path/to/Mulish-Light.woff') format('woff'),
-        url('path/to/Mulish-Light.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Mulish';
-    src: url('path/to/Mulish-Regular.woff2') format('woff2'),
-        url('path/to/Mulish-Regular.woff') format('woff'),
-        url('path/to/Mulish-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
 
 #hamburger {
     color: #3C64B1;
@@ -183,7 +166,6 @@ footer {
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.7s;
-    overflow-y: show;
 }
 
 .nav a {
@@ -227,16 +209,18 @@ footer {
     color: #fff;
     font-size: 20px;
 }
-#logIn{
+
+#logIn {
     font-family: 'Mulish', sans-serif;
     color: #fff;
     background-color: #3C64B1;
 }
+
 @media screen and (max-width: 1000px) {
     .slide {
         display: flex;
     }
-    
+
     .menu-center {
         display: none;
     }
