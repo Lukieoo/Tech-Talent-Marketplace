@@ -69,3 +69,18 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #2d81ff;
 }
+
+.signup-link {
+    font-family: 'Mulish', sans-serif;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    text-align: right;
+    width: 100%;
+}
+
+.signup-link a {
+    color: #3C64B1;
+    font-weight: bold;
+    text-decoration: underline;
+}

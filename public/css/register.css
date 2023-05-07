@@ -1,0 +1,103 @@
+
+.register-container {
+    flex-wrap: wrap;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-image {
+    margin-right: 2rem;
+}
+
+#register-image img {
+    width: 200px;
+    height: 200px;
+}
+
+#auth {
+    display: flow;
+}
+
+/*HERE*/
+.form-group {
+    margin-bottom: 10px;
+}
+
+#title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+
+    font-family: 'Mulish', sans-serif;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"], textarea {
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80%;
+}
+
+textarea {
+    font-family: 'Mulish', sans-serif;
+    background-color: rgba(60, 100, 177, 0.1);
+    border-radius:  1px;
+    resize: none;
+    width: 34.5rem;
+}
+
+button[type="submit"] {
+    font-family: 'Mulish', sans-serif;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.messages {
+    margin-top: 10px;
+    color: red;
+}
+
+#auth {
+    margin-top: 10px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    #auth {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #auth .form-group {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}

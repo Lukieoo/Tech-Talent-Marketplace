@@ -21,6 +21,7 @@ include('base/slider.php')
                 <form class="login" action="login" method="POST">
                     <div class="form-group">
                         <label id="title">Log In</label>
+                        <p></p>
                         <label for="email">Email</label>
                         <input id="email" name="email" type="text" placeholder="">
                     </div>
@@ -41,6 +42,9 @@ include('base/slider.php')
                         <button type="submit">Log In</button>
                     </div>
                 </form>
+                <div class="signup-link">
+                    <p>I am new user... <a href="register">Sign up</a></p>
+                </div>
             </div>
         </div>
     </div>
