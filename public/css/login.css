@@ -7,6 +7,7 @@
 }
 
 .login-container {
+    flex-wrap: wrap;
     font-family: 'Mulish', sans-serif;
     display: flex;
     justify-content: center;
@@ -59,7 +60,8 @@ button[type="submit"] {
     border-radius: 1px;
     cursor: pointer;
 }
-#title{
+
+#title {
     font-size: 1.8em;
     font-weight: bold;
 }
