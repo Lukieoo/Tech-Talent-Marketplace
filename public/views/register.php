@@ -53,10 +53,10 @@ include('base/slider.php')
                     <div class="form-group">
                         <button type="submit">Register</button>
                     </div>
+                    <div id="register-image">
+                        <input type="file" name="image">
+                    </div>
                 </form>
-                <div id="register-image">
-                    <img src="public/img/upload.jpg" alt="Log In">
-                </div>
             </div>
         </div>
     </div>

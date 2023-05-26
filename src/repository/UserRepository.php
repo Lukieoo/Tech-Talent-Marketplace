@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/User.php';
+require_once __DIR__ . '/../models/User.php';
 
 class UserRepository extends Repository
 {
@@ -30,18 +30,19 @@ class UserRepository extends Repository
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users_details (profession, description, photo)
-            VALUES (?, ?, ?)
+            INSERT INTO users_details (profession, description, photo,name)
+            VALUES (?, ?, ?, ?)
         ');
 
         $stmt->execute([
-            $user->getEmail(),
-            $user->getSurname(),
-            $user->getPhone()
+            $user->getProfession(),
+            $user->getDescription(),
+            $user->getPhoto(),
+            $user->getName()
         ]);
 
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users (email, password, id_user_details)
+            INSERT INTO users (email, password, id_users_details)
             VALUES (?, ?, ?)
         ');
 
@@ -55,11 +56,10 @@ class UserRepository extends Repository
     public function getUserDetailsId(User $user): int
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.users_details WHERE name = :name AND surname = :surname AND phone = :phone
-        ');
-        $stmt->bindParam(':name', $user->getName(), PDO::PARAM_STR);
-        $stmt->bindParam(':surname', $user->getSurname(), PDO::PARAM_STR);
-        $stmt->bindParam(':phone', $user->getPhone(), PDO::PARAM_STR);
+            SELECT * FROM public.users_details WHERE  name = :name AND profession = :profession AND description = :description');
+        $stmt->bindValue(':name', $user->getName(), PDO::PARAM_STR);
+        $stmt->bindValue(':profession', $user->getProfession(), PDO::PARAM_STR);
+        $stmt->bindValue(':description', $user->getDescription());
         $stmt->execute();
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);

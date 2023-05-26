@@ -7,6 +7,7 @@ class User
     private $name;
     private $description;
     private $profession;
+    private $photo;
 
     public function __construct(
         string $email,
@@ -56,5 +57,16 @@ class User
     {
         return $this->profession;
     }
+
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto($photo): void
+    {
+        $this->photo = $photo;
+    }
+
 
 }
