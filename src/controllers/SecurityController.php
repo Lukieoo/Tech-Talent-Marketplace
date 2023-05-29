@@ -6,7 +6,7 @@ require_once __DIR__ . '/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
-    const MAX_FILE_SIZE = 1024 * 1024;
+    const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
     private $userRepository;
@@ -50,36 +50,34 @@ class SecurityController extends AppController
 
     public function register()
     {
-   
-//        $this->getFile();
-//        if (!$this->isPost()) {
-//            return $this->render('register');
-//        }
-//        $email = $_POST['email'];
-//        $password = $_POST['password'];
-//
-//        $profession = $_POST['profession'];
-//        $description = $_POST['description'];
-//        $name = $_POST['name'];
-//        $this->user = new User($email, md5($password));
-//
-//        $this->user->setName($name);
-//        $this->user->setProfession($profession);
-//        $this->user->setDescription($description);
-//        $this->getFile();
-//        $this->userRepository->addUser($this->user);
-//
-//        return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
-    }
+        if (!$this->isPost()) {
+            return $this->render('register');
+        }
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    private function getFile()
+        $profession = $_POST['profession'];
+        $description = $_POST['description'];
+        $name = $_POST['name'];
+        $this->user = new User($email, md5($password));
+
+        $this->user->setName($name);
+        $this->user->setProfession($profession);
+        $this->user->setDescription($description);
+        $this->addPhoto();
+        $this->userRepository->addUser($this->user);
+
+        return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
+    }
+    public function addPhoto()
     {
-        move_uploaded_file(
-            $_FILES['file']['tmp_name'],
-            dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['tmp_name']
-        );
-        $this->user->setPhoto($_FILES['file']['tmp_name']);
-        echo $_FILES['file']['tmp_name'];
+        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
+            move_uploaded_file(
+                $_FILES['file']['tmp_name'],
+                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
+            );
+            $this->user->setPhoto($_FILES['file']['name']);
+        }
     }
 
     private function validate(array $file): bool

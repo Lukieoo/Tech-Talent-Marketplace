@@ -16,7 +16,7 @@ include('base/slider.php')
         <?php include('base/nav.php') ?>
         <div class="container center-content">
             <div class="register-container">
-                <form class="register" action="register" method="POST">
+                <form class="register" action="register" method="POST" ENCTYPE="multipart/form-data">
                     <div class="form-group">
                         <label id="title">Start Your IT Journey Sign Up Today!</label>
                         <p></p>
@@ -50,12 +50,13 @@ include('base/slider.php')
                         }
                         ?>
                     </div>
+                    <div id="register-image">
+                        <input type="file" name="file"/>
+                    </div>
                     <div class="form-group">
                         <button type="submit">Register</button>
                     </div>
-                    <div id="register-image">
-                        <input type="file" name="image">
-                    </div>
+
                 </form>
             </div>
         </div>
