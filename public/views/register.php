@@ -6,6 +6,7 @@ include('base/head.php')
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/register.css">
     <link rel="stylesheet" type="text/css" href="public/css/login.css">
+    <script src="public/js/validation.js"></script>
 </head>
 <body>
 <?php
@@ -16,7 +17,7 @@ include('base/slider.php')
         <?php include('base/nav.php') ?>
         <div class="container center-content">
             <div class="register-container">
-                <form class="register" action="register" method="POST">
+                <form class="register" action="register" method="POST" ENCTYPE="multipart/form-data">
                     <div class="form-group">
                         <label id="title">Start Your IT Journey Sign Up Today!</label>
                         <p></p>
@@ -49,14 +50,17 @@ include('base/slider.php')
                             }
                         }
                         ?>
+                        <span id="message"></span>
+                    </div>
+
+                    <div id="register-image">
+                        <input type="file" name="file"/>
                     </div>
                     <div class="form-group">
                         <button type="submit">Register</button>
                     </div>
+
                 </form>
-                <div id="register-image">
-                    <img src="public/img/upload.jpg" alt="Log In">
-                </div>
             </div>
         </div>
     </div>
