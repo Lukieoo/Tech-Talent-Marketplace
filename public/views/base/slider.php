@@ -9,5 +9,12 @@
     </a>
     <a href="#" onclick="closeSlideMenu()">Home</a>
     <a href="#" onclick="closeSlideMenu()">Find an Expert</a>
-    <a id="logIn" href="login" onclick="closeSlideMenu()">LogIn</a>
+    <?php
+    session_start();
+    if (isset($_SESSION['userEmail'])) {
+        echo '<a id="logIn" href="logout" onclick="closeSlideMenu()">Log Out</a>';
+    } else {
+        echo '<a id="logIn" href="login" onclick="closeSlideMenu()">LogIn</a>';
+    }
+    ?>
 </div>

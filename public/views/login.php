@@ -5,6 +5,7 @@ include('base/head.php')
 ?>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/login.css">
+    <script src="public/js/validationLogin.js"></script>
 </head>
 <body>
 <?php
@@ -37,6 +38,7 @@ include('base/slider.php')
                             }
                         }
                         ?>
+                        <span id="message"></span>
                     </div>
                     <div class="form-group">
                         <button type="submit">Log In</button>

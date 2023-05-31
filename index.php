@@ -9,5 +9,6 @@ Router::get('', 'DefaultController');
 Router::get('login', 'SecurityController');
 Router::get('home', 'DefaultController');
 Router::get('register', 'SecurityController');
+Router::get('logout', 'DefaultController');
 
 Router::run($path);

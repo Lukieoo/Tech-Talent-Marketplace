@@ -38,6 +38,11 @@
     margin-bottom: 1rem;
 }
 
+.messages {
+    margin-top: 10px;
+    color: red;
+}
+
 label {
     font-family: 'Mulish', sans-serif;
     margin-bottom: 0.5rem;
