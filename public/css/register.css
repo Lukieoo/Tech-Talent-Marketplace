@@ -52,7 +52,7 @@ input[type="text"], input[type="password"], textarea {
 textarea {
     font-family: 'Mulish', sans-serif;
     background-color: rgba(60, 100, 177, 0.1);
-    border-radius:  1px;
+    border-radius: 1px;
     resize: none;
     width: 34.5rem;
 }
@@ -83,7 +83,6 @@ button[type="submit"]:hover {
 #auth {
     margin-top: 10px;
 }
-
 
 
 @media only screen and (max-width: 768px) {

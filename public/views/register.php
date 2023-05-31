@@ -6,6 +6,7 @@ include('base/head.php')
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/register.css">
     <link rel="stylesheet" type="text/css" href="public/css/login.css">
+    <script src="public/js/validation.js"></script>
 </head>
 <body>
 <?php
@@ -49,7 +50,9 @@ include('base/slider.php')
                             }
                         }
                         ?>
+                        <span id="message"></span>
                     </div>
+
                     <div id="register-image">
                         <input type="file" name="file"/>
                     </div>
