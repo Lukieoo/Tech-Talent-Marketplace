@@ -14,10 +14,17 @@ class DefaultController extends AppController
     {
         $this->render('home');
     }
+
+    public function logout()
+    {
+        $this->render('logout');
+    }
+
     public function register()
     {
         $this->render('register');
     }
+
     public function login()
     {
         $this->render('login');
