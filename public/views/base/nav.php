@@ -11,6 +11,7 @@
     if (isset($_SESSION['userEmail'])) {
         echo '<div class="menu-right">
             <a href="logout" class="login-button">Log Out</a>
+             <a href="profile"><img  src="public/img/avatar.png" alt="Log In"></a> 
         </div>';
     } else {
         echo '<div class="menu-right">

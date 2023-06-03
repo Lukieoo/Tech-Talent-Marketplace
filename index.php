@@ -11,5 +11,7 @@ Router::get('home', 'DefaultController');
 Router::get('register', 'SecurityController');
 Router::get('logout', 'DefaultController');
 Router::get('experts', 'ExpertsController');
+Router::get('profile', 'ProfileController');
+Router::get('edit', 'ProfileController');
 
 Router::run($path);

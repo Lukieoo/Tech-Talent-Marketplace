@@ -43,6 +43,7 @@ class SecurityController extends AppController
         }
         session_start();
         $_SESSION['userEmail'] = $email;
+        $_SESSION['id'] = $user->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}");
     }
@@ -60,7 +61,7 @@ class SecurityController extends AppController
         $profession = $_POST['profession'];
         $description = $_POST['description'];
         $name = $_POST['name'];
-        $this->user = new User($email, md5($password));
+        $this->user = new User(0, $email, md5($password));
 
         $this->user->setName($name);
         $this->user->setProfession($profession);

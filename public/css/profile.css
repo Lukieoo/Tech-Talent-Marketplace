@@ -1,0 +1,65 @@
+
+button[type="submit"] {
+    margin-top: 1rem;
+    background-color: #3C64B1;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.profile {
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.profile-info {
+    font-size: 18px;
+}
+
+.info-item {
+    font-family: Mulish, serif;
+    font-size: 14px;
+    max-width: 700px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+}
+
+.info-value {
+    margin: 1.6em;
+    color: #888;
+}
+
+.profile-image img {
+    margin-left: 7em;
+    width: 250px;
+    height: 260px;
+    object-fit: cover;
+}
+
+input[type="text"], input[type="password"], textarea {
+    background-color: rgba(60, 100, 177, 0.1);
+    padding: 10px;
+    border: 0px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80%;
+}
+
+textarea {
+    font-family: 'Mulish', sans-serif;
+    background-color: rgba(60, 100, 177, 0.1);
+    border-radius: 1px;
+    resize: none;
+    width: 34.5rem;
+}

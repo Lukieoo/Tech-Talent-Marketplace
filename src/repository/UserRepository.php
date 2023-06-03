@@ -22,30 +22,12 @@ class UserRepository extends Repository
         }
 
         return new User(
+            $user['id'],
             $user['email'],
             $user['password']
         );
     }
-    public function getUserFromID(int $id): ?User
-    {
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users u LEFT JOIN users_details ud 
-            ON u.id_users_details = ud.id WHERE email = :email
-        ');
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$user) {
-            return null;
-        }
-
-        return new User(
-            $user['email'],
-            $user['password']
-        );
-    }
     public function addUser(User $user)
     {
         $stmt = $this->database->connect()->prepare('
@@ -68,11 +50,11 @@ class UserRepository extends Repository
         $stmt->execute([
             $user->getEmail(),
             $user->getPassword(),
-            $this->getUserDetailsId($user)
+            $this->addUserDetailsId($user)
         ]);
     }
 
-    public function getUserDetailsId(User $user): int
+    public function addUserDetailsId(User $user): int
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users_details WHERE  name = :name AND profession = :profession AND description = :description');

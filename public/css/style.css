@@ -58,6 +58,10 @@ nav .logo {
     align-items: center;
 }
 
+.menu-right a {
+    margin-right: 1em;
+}
+
 .login-button {
     background: #3C64B1;
     color: #fff;

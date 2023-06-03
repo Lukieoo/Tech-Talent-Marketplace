@@ -7,6 +7,11 @@
     margin-bottom: 1em;
 }
 
+.expert a {
+    color: #373F41;
+    text-decoration: none;
+}
+
 .expert {
     margin: 10px;
 }
@@ -40,10 +45,12 @@
 .social-section i {
     margin-right: 10px;
 }
-label{
+
+label {
     font-family: 'Mulish', sans-serif;
     color: #373F41;
 }
+
 .search-container {
     align-items: center;
     justify-content: flex-start;
@@ -60,12 +67,13 @@ label{
     padding: 10px 20px;
 }
 
-input[type="text"]  {
+input[type="text"] {
     background-color: rgba(60, 100, 177, 0.1);
     padding: 0.7rem;
     border: 0px solid #ccc;
     border-radius: 1px;
 }
+
 button {
     background-color: #3C64B1;
     color: #fff;
@@ -74,6 +82,7 @@ button {
     border-radius: 1px;
     cursor: pointer;
 }
+
 .pagination {
     margin-bottom: 1em;
     font-family: 'Mulish', sans-serif;

@@ -26,9 +26,58 @@ class ExpertsRepository extends Repository
                 $expert['name'],
                 $expert['description'],
                 $expert['profession'],
+                $expert['id'],
                 $expert['photo'] ?? ""
             );
         }
         return $result;
+    }
+
+    public function getExpertFromID(int $id): ?Expert
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users u LEFT JOIN users_details ud 
+            ON u.id_users_details = ud.id WHERE id_users_details = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $expert = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$expert) {
+            return null;
+        }
+        $expert = new Expert(
+            $expert['name'],
+            $expert['description'],
+            $expert['profession'],
+            $id,
+            $expert['photo'] ?? ""
+        );
+        $expert->setEmail($this->getExpertEmail($id));
+        return $expert;
+    }
+
+    private function getExpertEmail(string $id): string
+    {
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM users WHERE id_users_details = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user['email'] ?? "";
+    }
+
+    public function updateExpert($id, $profession, $description, $name)
+    {
+        $stmt = $this->database->connect()->prepare('
+    UPDATE users_details SET name=:name, profession=:profession, description=:description WHERE id=:id
+    ');
+        $stmt->bindParam(":id", $id, PDO::PARAM_STR);
+        $stmt->bindParam(":name", $name, PDO::PARAM_STR);
+        $stmt->bindParam(":profession", $profession, PDO::PARAM_STR);
+        $stmt->bindParam(":description", $description, PDO::PARAM_STR);
+        $stmt->execute();
     }
 }

@@ -29,11 +29,13 @@ include('base/slider.php')
         <section class="experts">
             <?php foreach ($experts as $expert): ?>
                 <div class="expert" id="expert-1">
-                    <img src="public/uploads/<?= $expert->getPhoto(); ?>">
-                    <div>
-                        <h2><?= $expert->getName(); ?></h2>
-                        <p><?= $expert->getDescription(); ?></p>
-                    </div>
+                    <a href="profile?id=<?= $expert->getId() ?>">
+                        <img src="public/uploads/<?= $expert->getPhoto(); ?>">
+                        <div>
+                            <h2><?= $expert->getName(); ?></h2>
+                            <p><?= $expert->getProfession(); ?></p>
+                        </div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </section>
