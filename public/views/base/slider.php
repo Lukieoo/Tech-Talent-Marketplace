@@ -7,8 +7,8 @@
     <a href="#" class="close" onclick="closeSlideMenu()">
         <i class="fas fa-times"></i>
     </a>
-    <a href="#" onclick="closeSlideMenu()">Home</a>
-    <a href="#" onclick="closeSlideMenu()">Find an Expert</a>
+    <a href="home" onclick="closeSlideMenu()">Home</a>
+    <a href="experts" onclick="closeSlideMenu()">Find an Expert</a>
     <?php
     session_start();
     if (isset($_SESSION['userEmail'])) {

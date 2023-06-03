@@ -4,7 +4,7 @@
     </div>
     <div class="menu-center">
         <a href="home">Home</a>
-        <a href="#">Find an Expert</a>
+        <a href="experts">Find an Expert</a>
     </div>
     <?php
     session_start();

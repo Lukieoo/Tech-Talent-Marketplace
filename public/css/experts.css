@@ -1,0 +1,94 @@
+.experts {
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.expert {
+    margin: 10px;
+}
+
+.expert img {
+    width: 260px;
+    height: 255px;
+    object-fit: cover;
+}
+
+.expert div {
+    padding: 10px;
+}
+
+.expert h2 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.expert p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.social-section {
+    margin-top: 10px;
+}
+
+.social-section i {
+    margin-right: 10px;
+}
+label{
+    font-family: 'Mulish', sans-serif;
+    color: #373F41;
+}
+.search-container {
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5em 0 3em 100px;
+}
+
+.search-container input {
+    width: 240px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+}
+
+input[type="text"]  {
+    background-color: rgba(60, 100, 177, 0.1);
+    padding: 0.7rem;
+    border: 0px solid #ccc;
+    border-radius: 1px;
+}
+button {
+    background-color: #3C64B1;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.pagination {
+    margin-bottom: 1em;
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #ccc;
+}

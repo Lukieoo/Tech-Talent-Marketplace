@@ -137,6 +137,7 @@ nav .logo {
 }
 
 footer {
+    flex-shrink: 0;
     background-color: #373F41;
     color: #C3CBCD;
     height: 64px;
