@@ -1,5 +1,6 @@
 
 .register-container {
+    margin: 1em;
     flex-wrap: wrap;
     font-family: 'Mulish', sans-serif;
     display: flex;

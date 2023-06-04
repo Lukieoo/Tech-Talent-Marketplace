@@ -63,9 +63,14 @@ class SecurityController extends AppController
         $name = $_POST['name'];
         $this->user = new User(0, $email, md5($password));
 
+        $latitude = $_POST['lat'];
+        $longitude = $_POST['lng'];
+
         $this->user->setName($name);
         $this->user->setProfession($profession);
         $this->user->setDescription($description);
+        $this->user->setLatitude($latitude);
+        $this->user->setLongitude($longitude);
         $this->addPhoto();
         $this->userRepository->addUser($this->user);
 

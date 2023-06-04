@@ -46,11 +46,25 @@ class UserRepository extends Repository
             INSERT INTO users (email, password, id_users_details)
             VALUES (?, ?, ?)
         ');
-
+        $expertIdDetails = $this->addUserDetailsId($user);
+        $this->addExpertLocation($expertIdDetails, $user);
         $stmt->execute([
             $user->getEmail(),
             $user->getPassword(),
-            $this->addUserDetailsId($user)
+            $expertIdDetails
+        ]);
+    }
+
+    public function addExpertLocation(int $expertIdDetails, User $user)
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO location (id_expert_details, latitude, longitude)
+            VALUES (?, ?, ?)
+        ');
+        $stmt->execute([
+            $expertIdDetails,
+            $user->getLatitude(),
+            $user->getLongitude(),
         ]);
     }
 

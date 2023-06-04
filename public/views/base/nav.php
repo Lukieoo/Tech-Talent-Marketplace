@@ -5,6 +5,7 @@
     <div class="menu-center">
         <a href="home">Home</a>
         <a href="experts">Find an Expert</a>
+        <a href="map">Map</a>
     </div>
     <?php
     session_start();
