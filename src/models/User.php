@@ -9,8 +9,7 @@ class User
     private $description;
     private $profession;
     private $photo;
-    private $Latitude;
-    private $longitude;
+    private $location;
 
     public function __construct(
         string $id,
@@ -21,6 +20,16 @@ class User
         $this->id = $id;
         $this->email = $email;
         $this->password = $password;
+    }
+
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    public function setLocation( Location $location): void
+    {
+        $this->location = $location;
     }
 
     public function getId()
@@ -46,26 +55,6 @@ class User
     public function setName($name): void
     {
         $this->name = $name;
-    }
-
-    public function getLatitude()
-    {
-        return $this->Latitude;
-    }
-
-    public function getLongitude()
-    {
-        return $this->longitude;
-    }
-
-    public function setLatitude($Latitude): void
-    {
-        $this->Latitude = $Latitude;
-    }
-
-    public function setLongitude($longitude): void
-    {
-        $this->longitude = $longitude;
     }
 
     public function setDescription($description): void

@@ -58,23 +58,25 @@ class UserRepository extends Repository
     public function addExpertLocation(int $expertIdDetails, User $user)
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO location (id_expert_details, latitude, longitude)
-            VALUES (?, ?, ?)
-        ');
+        INSERT INTO location (id_expert_details, latitude, longitude)
+        VALUES (?, ?, ?)
+    ');
         $stmt->execute([
             $expertIdDetails,
-            $user->getLatitude(),
-            $user->getLongitude(),
+            $user->getLocation()->getLatitude(),
+            $user->getLocation()->getLongitude(),
         ]);
     }
+
 
     public function addUserDetailsId(User $user): int
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.users_details WHERE  name = :name AND profession = :profession AND description = :description');
+        SELECT * FROM public.users_details WHERE name = :name AND profession = :profession AND description = :description
+    ');
         $stmt->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':profession', $user->getProfession(), PDO::PARAM_STR);
-        $stmt->bindValue(':description', $user->getDescription());
+        $stmt->bindValue(':description', $user->getDescription(), PDO::PARAM_STR);
         $stmt->execute();
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -35,12 +35,13 @@ class SecurityController extends AppController
         }
 
         if ($user->getEmail() !== $email) {
-            return $this->render('login', ['messages' => ['User with this email not exist!']]);
+            return $this->render('login', ['messages' => ['User with this email does not exist!']]);
         }
 
         if ($user->getPassword() !== $password) {
-            return $this->render('login', ['messages' => ['Wrong password!']]);
+            return $this->render('login', ['messages' => ['Incorrect password!']]);
         }
+
         session_start();
         $_SESSION['userEmail'] = $email;
         $_SESSION['id'] = $user->getId();
@@ -55,27 +56,29 @@ class SecurityController extends AppController
         if (!$this->isPost()) {
             return $this->render('register');
         }
+
         $email = $_POST['email'];
         $password = $_POST['password'];
-
         $profession = $_POST['profession'];
         $description = $_POST['description'];
         $name = $_POST['name'];
-        $this->user = new User(0, $email, md5($password));
 
+        $this->user = new User(0, $email, md5($password));
         $latitude = $_POST['lat'];
         $longitude = $_POST['lng'];
+
 
         $this->user->setName($name);
         $this->user->setProfession($profession);
         $this->user->setDescription($description);
-        $this->user->setLatitude($latitude);
-        $this->user->setLongitude($longitude);
+        $this->user->setLocation(new Location($latitude, $longitude));
         $this->addPhoto();
+
         $this->userRepository->addUser($this->user);
 
-        return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
+        return $this->render('login', ['messages' => ['You have been successfully registered!']]);
     }
+
 
     public function addPhoto()
     {
@@ -91,7 +94,7 @@ class SecurityController extends AppController
     private function validate(array $file): bool
     {
         if ($file['size'] > self::MAX_FILE_SIZE) {
-            $this->message[] = 'File is too large for destination file system.';
+            $this->message[] = 'File is too large for the destination file system.';
             return false;
         }
 

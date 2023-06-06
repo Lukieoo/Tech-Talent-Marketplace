@@ -13,6 +13,6 @@ Router::get('logout', 'DefaultController');
 Router::get('experts', 'ExpertsController');
 Router::get('profile', 'ProfileController');
 Router::get('edit', 'ProfileController');
-Router::get('map', 'DefaultController');
+Router::get('map', 'MapController');
 
 Router::run($path);
