@@ -8,6 +8,8 @@
         <i class="fas fa-times"></i>
     </a>
     <a href="home" onclick="closeSlideMenu()">Home</a>
+    <a href="map" onclick="closeSlideMenu()">Experts Map</a>
+    <a href="news" onclick="closeSlideMenu()">News</a>
     <a href="experts" onclick="closeSlideMenu()">Find an Expert</a>
     <?php
     session_start();

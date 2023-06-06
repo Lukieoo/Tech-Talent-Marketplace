@@ -5,6 +5,7 @@ include('base/head.php')
 ?>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/profile.css">
+    <script type="module" src="public/js/picker.js"></script>
 </head>
 <body>
 <?php

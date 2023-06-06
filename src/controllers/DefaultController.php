@@ -35,6 +35,11 @@ class DefaultController extends AppController
         $this->render('map');
     }
 
+    public function news()
+    {
+        $this->render('news');
+    }
+
     public function login()
     {
         $this->render('login');

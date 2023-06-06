@@ -14,5 +14,6 @@ Router::get('experts', 'ExpertsController');
 Router::get('profile', 'ProfileController');
 Router::get('edit', 'ProfileController');
 Router::get('map', 'MapController');
+Router::get('news', 'DefaultController');
 
 Router::run($path);
