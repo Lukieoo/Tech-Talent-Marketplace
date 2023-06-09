@@ -26,7 +26,6 @@ class ProfileController extends AppController
         $profession = $_POST['profession'];
         $description = $_POST['description'];
         $name = $_POST['name'];
-        echo $description;
         $this->expertsRepository->updateExpert($_SESSION['id'], $profession, $description, $name);
         $this->renderProfile();
     }
