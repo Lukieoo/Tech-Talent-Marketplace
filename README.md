@@ -21,9 +21,7 @@ The Tech-Talent-Marketplace project aims to bridge the gap between IT specialist
 - [Features](#features) 
 - [Technologies](#technologies)  
 - [Database Information](#database-information)
-- [Usage](#usage)
-- [Status](#status)
-- [Contact Page](#contact-page)
+- [Usage](#usage)  
 
 ## Project Overview
 
@@ -62,8 +60,7 @@ These features enhance the usability and functionality of the Tech-Talent-Market
 
 ![Database ERD diagram](./doc/erd.png)
 
-## Project Structure
-   
+## Usage 
 
 ### Home Page
 ![Database ERD diagram](./doc/1.png)
